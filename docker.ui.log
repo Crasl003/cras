@@ -1,0 +1,243 @@
+[2023/10/11 21:52:56 CST 903] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 21:52:56 CST 905] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 21:52:56 CST 904] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 21:52:56 CST 905] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 21:59:17 CST 417] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:00:46 CST 016] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:00:46 CST 016] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:00:46 CST 016] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:00:46 CST 017] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:05:20 CST 897] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:05:35 CST 693] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:05:35 CST 694] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:05:35 CST 694] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:05:35 CST 695] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:05:45 CST 169] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:05:45 CST 171] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:06:10 CST 096] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:06:10 CST 096] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:06:10 CST 097] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:06:10 CST 096] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:06:51 CST 524] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:06:51 CST 525] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:06:51 CST 525] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:06:51 CST 525] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:10:06 CST 742] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:10:06 CST 744] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:10:06 CST 744] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:10:06 CST 745] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:33:38 CST 937] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:33:38 CST 941] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:33:38 CST 941] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:33:38 CST 943] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:37:17 CST 289] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:37:17 CST 290] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:37:17 CST 290] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:37:17 CST 290] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:38:18 CST 905] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:38:18 CST 906] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:38:18 CST 906] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:38:18 CST 906] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:40:32 CST 499] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:40:32 CST 500] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:40:32 CST 500] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:40:32 CST 501] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/11 22:50:45 CST 500] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/11 22:50:45 CST 501] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/11 22:50:45 CST 501] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/11 22:50:45 CST 502] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/14 18:53:27 CST 664] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/14 18:53:27 CST 669] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/14 18:53:27 CST 669] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/14 18:53:27 CST 671] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/17 07:44:14 CST 087] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/17 07:44:14 CST 091] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/17 07:44:14 CST 090] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/17 07:44:14 CST 092] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/17 09:51:54 CST 978] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/17 09:51:54 CST 983] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/17 09:51:54 CST 984] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/17 09:51:54 CST 985] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/17 12:08:09 CST 372] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/17 12:08:09 CST 375] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/17 12:08:09 CST 376] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/17 12:08:09 CST 377] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/17 12:31:20 CST 918] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/17 12:31:20 CST 923] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/17 12:31:20 CST 922] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/17 12:31:20 CST 924] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/24 01:41:09 CST 170] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/24 01:41:09 CST 174] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/24 01:41:09 CST 174] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/24 01:41:09 CST 176] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/24 01:42:17 CST 079] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/24 01:42:17 CST 081] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/24 01:42:17 CST 081] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/24 01:42:17 CST 082] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/24 21:37:25 CST 007] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/24 21:37:25 CST 011] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/24 21:37:25 CST 012] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/24 21:37:25 CST 016] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/24 22:03:22 CST 051] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/24 22:03:22 CST 052] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/24 22:03:22 CST 052] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/24 22:03:22 CST 052] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/24 23:30:43 CST 929] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/24 23:30:43 CST 936] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/24 23:30:43 CST 937] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/24 23:30:43 CST 938] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/30 14:38:35 CST 192] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/30 14:38:35 CST 198] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/30 14:38:35 CST 200] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/30 14:38:35 CST 201] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/31 20:29:50 CST 157] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/31 20:29:50 CST 161] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/31 20:29:50 CST 161] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/31 20:29:50 CST 165] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/31 20:39:09 CST 988] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:168) unix Docker Endpoint is attached
+[2023/10/31 20:47:06 CST 490] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:168) unix Docker Endpoint is attached
+[2023/10/31 20:52:18 CST 549] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/31 20:52:18 CST 555] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/31 20:52:18 CST 556] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/31 20:52:18 CST 557] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/31 21:41:36 CST 382] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/10/31 21:41:36 CST 385] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/10/31 21:41:36 CST 386] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/10/31 21:41:36 CST 388] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/10/31 21:49:23 CST 283] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:168) unix Docker Endpoint is attached
+[2023/10/31 22:12:00 CST 199] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:168) unix Docker Endpoint is attached
+[2023/11/07 18:11:55 CST 876] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:168) unix Docker Endpoint is attached
+[2023/11/07 18:15:28 CST 130] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:168) unix Docker Endpoint is attached
+[2023/11/07 18:41:47 CST 675] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:41:47 CST 679] [INFO][gohutool.docker4go.ui] (main.main:90) Database is load.
+[2023/11/07 18:41:47 CST 679] [INFO][gohutool.docker4go.ui] (main.main:110) Start docker-ui-v1.0.0 now .... 
+[2023/11/07 18:41:47 CST 680] [INFO][gohutool.docker4go.ui] (main.startHttpServer:338) Starting HTTP server on [::]:8999
+[2023/11/07 18:42:19 CST 912] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:42:19 CST 914] [INFO][gohutool.docker4go.ui] (main.main:90) Database is load.
+[2023/11/07 18:42:19 CST 914] [INFO][gohutool.docker4go.ui] (main.main:110) Start docker-ui-v1.0.0 now .... 
+[2023/11/07 18:42:19 CST 914] [INFO][gohutool.docker4go.ui] (main.startHttpServer:338) Starting HTTP server on [::]:8999
+[2023/11/07 18:43:47 CST 817] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:47:19 CST 862] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:48:22 CST 798] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:49:10 CST 895] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:54:22 CST 986] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 18:55:00 CST 807] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 19:02:11 CST 411] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 19:02:54 CST 226] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 19:06:47 CST 133] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 19:08:29 CST 936] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 21:16:37 CST 008] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 21:16:58 CST 748] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 21:27:26 CST 833] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 21:33:48 CST 235] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 21:34:08 CST 496] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 22:27:36 CST 652] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 22:28:41 CST 079] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 22:31:12 CST 979] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 22:34:32 CST 892] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 22:42:00 CST 928] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 23:02:44 CST 667] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 23:03:47 CST 470] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 23:15:31 CST 788] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 23:15:48 CST 946] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 23:24:01 CST 560] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/07 23:25:41 CST 522] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/08 08:19:54 CST 550] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/11 16:16:53 CST 884] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/11 16:19:40 CST 564] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:174) unix Docker Endpoint is attached
+[2023/11/12 01:39:46 CST 316] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 01:44:54 CST 557] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 01:55:14 CST 948] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:04:56 CST 518] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:05:52 CST 791] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:07:24 CST 403] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:17:47 CST 574] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:27:37 CST 775] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:33:07 CST 754] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:35:03 CST 675] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:35:48 CST 317] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:36:49 CST 391] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:38:03 CST 777] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:41:05 CST 124] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 02:41:59 CST 796] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:00:21 CST 049] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:06:32 CST 452] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:07:55 CST 263] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:09:18 CST 354] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:11:32 CST 517] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:12:58 CST 915] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:13:59 CST 128] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:23:33 CST 289] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:28:24 CST 423] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:29:14 CST 352] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 21:57:41 CST 347] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 22:06:25 CST 621] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 22:54:56 CST 366] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 22:59:20 CST 463] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:01:31 CST 953] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:02:46 CST 695] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:03:47 CST 570] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:04:06 CST 512] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:07:56 CST 663] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:11:01 CST 951] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:17:31 CST 853] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:20:44 CST 876] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:24:11 CST 835] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:34:30 CST 064] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:36:51 CST 488] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:57:07 CST 300] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:58:03 CST 825] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:58:17 CST 612] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/12 23:59:56 CST 110] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:11:31 CST 313] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:13:07 CST 525] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:16:19 CST 702] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:18:37 CST 336] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:19:18 CST 665] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:19:52 CST 454] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/13 00:21:17 CST 662] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/14 21:32:26 CST 972] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/20 14:41:41 CST 515] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/11/20 14:41:41 CST 520] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/11/20 14:41:41 CST 520] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/11/20 14:41:41 CST 521] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/11/20 21:01:20 CST 192] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/20 21:06:11 CST 287] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/20 21:11:45 CST 072] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/20 21:19:27 CST 561] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/20 21:19:48 CST 566] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/20 21:20:22 CST 870] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:175) unix Docker Endpoint is attached
+[2023/11/21 00:40:10 CST 204] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/11/21 00:40:10 CST 208] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/11/21 00:40:10 CST 210] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/11/21 00:40:10 CST 211] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/11/21 00:43:52 CST 754] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:45:06 CST 227] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:46:45 CST 790] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:47:07 CST 838] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:47:31 CST 360] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:47:58 CST 035] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:51:06 CST 650] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:51:49 CST 376] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 00:53:42 CST 377] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 09:41:24 CST 209] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/11/21 09:41:24 CST 213] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/11/21 09:41:24 CST 213] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/11/21 09:41:24 CST 216] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/11/21 12:30:21 CST 858] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/21 16:35:27 CST 894] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/11/21 16:35:27 CST 898] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/11/21 16:35:27 CST 899] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/11/21 16:35:27 CST 902] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/11/22 10:31:14 CST 928] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/22 10:36:21 CST 375] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/22 10:41:44 CST 390] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/22 10:45:49 CST 320] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:176) unix Docker Endpoint is attached
+[2023/11/22 11:04:30 CST 474] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/11/22 11:04:30 CST 480] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/11/22 11:04:30 CST 481] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/11/22 11:04:30 CST 482] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
+[2023/11/22 11:20:06 CST 866] [INFO][gohutool.docker4go.ui] (main.initEndpointFile:155) unix Docker Endpoint is attached
+[2023/11/22 11:20:06 CST 870] [INFO][gohutool.docker4go.ui] (main.main:71) Database is load.
+[2023/11/22 11:20:06 CST 872] [INFO][gohutool.docker4go.ui] (main.main:91) Start docker-ui-v1.0.0 now .... 
+[2023/11/22 11:20:06 CST 874] [INFO][gohutool.docker4go.ui] (main.startHttpServer:319) Starting HTTP server on [::]:8999
