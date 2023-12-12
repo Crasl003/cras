@@ -10,8 +10,7 @@ import (
 	routing "github.com/qiangxue/fasthttp-routing"
 )
 
-/*
-*
+/**
 * golang-sample源代码，版权归锦翰科技（深圳）有限公司所有。
 * <p>
 * 文件名称 : user.go

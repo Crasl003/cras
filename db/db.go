@@ -2,10 +2,25 @@ package db
 
 import (
 	"database/sql"
+	"fmt"
+	"log"
 
+	"github.com/gin-gonic/gin"
 	"github.com/gohutool/boot4go-util/db"
 	_ "github.com/mattn/go-sqlite3"
 )
+
+/**
+* golang-sample源代码，版权归锦翰科技（深圳）有限公司所有。
+* <p>
+* 文件名称 : _db.go
+* 文件路径 :
+* 作者 : DavidLiu
+× Email: david.liu@ginghan.com
+*
+* 创建日期 : 2022/5/12 21:23
+* 修改历史 : 1. [2022/5/12 21:23] 创建文件 by LongYong
+*/
 
 var dbPlus db.DBPlus
 
@@ -45,18 +60,6 @@ CREATE TABLE if not exists "t_repos" (
     "createtime" TIMESTAMP default (datetime('now', 'localtime'))
 );
 
-CREATE TABLE if not exists "t_uploads" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "Algorithm_Name" VARCHAR(64) ,
-    "Downloads" VARCHAR(64),
-	"Algorithm_Version" VARCHAR(64),
-    "Author_Name" VARCHAR(64),
-    "Introduction" VARCHAR(64),
-    "Function" VARCHAR(64),
-    "Space" VARCHAR(64),
-    "createtime" TIMESTAMP default (datetime('now', 'localtime'))
-);
-
 CREATE TABLE if not exists "t_orchestrator" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "orchestratorid" VARCHAR(64) NULL,
@@ -68,6 +71,11 @@ CREATE TABLE if not exists "t_orchestrator" (
 );
 `
 
+type Algorithm struct {
+	Name        string
+	Description string
+}
+
 func InitDB() {
 
 	_, err := dbPlus.GetDB().Exec(sql_table)
@@ -76,4 +84,53 @@ func InitDB() {
 	}
 
 	InitAdminUser()
+}
+
+func AllDatabaseAlgorithms(c *gin.Context) {
+	// 连接数据库
+	db, err := sql.Open("sqlite3", "./data.db")
+	if err != nil {
+		panic(err.Error())
+	}
+	defer db.Close()
+
+	// 执行全部算法数据
+	rows, err := db.Query("SELECT algorithm FROM algorithms")
+	if err != nil {
+		panic(err.Error())
+	}
+	defer rows.Close()
+
+	// 遍历查询结果
+	for rows.Next() {
+		var algorithm string
+		err = rows.Scan(&algorithm)
+		if err != nil {
+			panic(err.Error())
+		}
+		fmt.Println("Running algorithm:", algorithm)
+		// 在此处执行具体的算法操作
+	}
+
+	fmt.Println("所有数据库算法数据已运行完毕")
+}
+
+func GetAlgorithmDetails(c *gin.Context) {
+	id := c.PostForm("id")
+
+	db, err := sql.Open("sqlite3", "./data.db")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	row := db.QueryRow("SELECT name, details FROM algorithms WHERE id = ?", id)
+	var name, details string
+	err = row.Scan(&name, &details)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("Algorithm Name: %s\n", name)
+	fmt.Printf("Algorithm Details: %s\n", details)
 }

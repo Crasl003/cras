@@ -292,7 +292,7 @@ APP.fn = function (loadFn){
 loadAllCss()
 
 var local_node = {
-    node_host: "192.168.3.162",
+    node_host: "192.168.126.129",
     node_port: "2375",
     node_version: "v1.32",
     volumes: [],
