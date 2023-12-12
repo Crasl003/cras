@@ -86,7 +86,7 @@ func main() {
 	r.DELETE("/Deleteupload", db.Deleteuploads)
 	r.POST("/UploadFile", db.UploadFile)
 	r.POST("/BulidImage", db.BulidImage)
-	r.GET("/Dockerpush", db.Dockerpush)
+	r.GET("/DockerLogin", db.DockerLogin)
 	r.Run()
 	Logger.Info("Database is load.")
 

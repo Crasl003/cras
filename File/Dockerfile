@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql
 ADD . /app/File
 WORKDIR /app
 EXPOSE 8080

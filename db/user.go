@@ -166,6 +166,8 @@ func UploadFile(c *gin.Context) {
 }
 func BulidImage(c *gin.Context) {
 	form, err := c.MultipartForm()
+	//选择哪个仓库地址
+	repositoryId := c.PostForm("repositoryId")
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
@@ -247,40 +249,77 @@ func BulidImage(c *gin.Context) {
 		})
 		return
 	}
-	os.Chdir("..")                        //回到有docker环境的目录
-	cmd = exec.Command("docker", "login") //登陆一次在json里自动保存账户密码
-	err = cmd.Run()
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	}
-	//自定义仓库名
-	Repositorybase := "crasl/"
-	PushImageName := Repositorybase + system_Name + ":" + system_Version
-	//打包镜像
-	Tagcmd := exec.Command("docker", "tag", ImageNameTag, PushImageName)
-	err1 = Tagcmd.Run()
-	if err1 != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	}
-	//Push
-	Pushcmd := exec.Command("docker", "push", PushImageName)
-	err2 := Pushcmd.Run()
-	if err2 != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"ret":  0,
-			"data": "OK",
-		})
+	os.Chdir("..") //回到有docker环境的目录
+	if repositoryId == "default" {
+		cmd = exec.Command("docker", "login") //登陆一次在json里自动保存账户密码
+		err = cmd.Run()
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"loginerror": err,
+			})
+			return
+		}
+		//自定义仓库名
+		Repositorybase := "crasl/"
+		PushImageName := Repositorybase + system_Name + ":" + system_Version
+		//打包镜像
+		Tagcmd := exec.Command("docker", "tag", ImageNameTag, PushImageName)
+		err1 = Tagcmd.Run()
+		if err1 != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"Tagerror": err,
+			})
+			return
+		}
+		//Push
+		Pushcmd := exec.Command("docker", "push", PushImageName)
+		err2 := Pushcmd.Run()
+		if err2 != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"Pusherror": err,
+			})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{
+				"ret":  0,
+				"data": "OK",
+			})
+		}
+	} else if repositoryId == "registry.cn-hangzhou.aliyuncs.com" {
+		loginCmd := exec.Command("docker", "login", "-u", "aicrazy", "-p", "Zufe1234!", "registry.cn-hangzhou.aliyuncs.com")
+		err := loginCmd.Run()
+		if err != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": err,
+			})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{
+				"msg": "Login Success!",
+			})
+		}
+		Repositorybase := "registry.cn-hangzhou.aliyuncs.com/zufe_123/docker_image:"
+		PushImageName := Repositorybase + "dockerimage"
+		Tagcmd := exec.Command("docker", "tag", ImageNameTag, PushImageName)
+		err1 = Tagcmd.Run()
+		if err1 != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": err,
+			})
+			return
+		}
+		Pushcmd := exec.Command("docker", "push", PushImageName)
+		err2 := Pushcmd.Run()
+		if err2 != nil {
+			c.JSON(http.StatusBadRequest, gin.H{
+				"error": err,
+			})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{
+				"msg": "Push Success!",
+			})
+		}
 	}
 }
 func Dockerpush(c *gin.Context) {
@@ -316,6 +355,35 @@ func Dockerpush(c *gin.Context) {
 	}
 	//Push
 	Pushcmd := exec.Command("docker", "push", PushImageName)
+	err2 := Pushcmd.Run()
+	if err2 != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "Push Success!",
+		})
+	}
+}
+func DockerLogin(c *gin.Context) {
+	loginCmd := exec.Command("docker", "login", "-u", "aicrazy", "-p", "Zufe1234!", "registry.cn-hangzhou.aliyuncs.com")
+	loginCmd.Stdin = os.Stdin
+	loginCmd.Stdout = os.Stdout
+	loginCmd.Stderr = os.Stderr
+	err := loginCmd.Run()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+		})
+		return
+	} else {
+		c.JSON(http.StatusOK, gin.H{
+			"msg": "Login Success!",
+		})
+	}
+	Pushcmd := exec.Command("docker", "push", "registry.cn-hangzhou.aliyuncs.com/zufe_123/docker_image:mysql")
 	err2 := Pushcmd.Run()
 	if err2 != nil {
 		c.JSON(http.StatusBadRequest, gin.H{

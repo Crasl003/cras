@@ -1,1 +1,13 @@
 w0y
+w1y
+w0yw1y
+w0yw0y
+Get Spark from the downloads page of the project website This documentation is for Spark version 3.5.0 Spark uses Hadoop’s client libraries for HDFS and YARN Downloads are pre-packaged for a handful of popular Hadoop versions Users can also download a “Hadoop free” binary and run Spark with any Hadoop version by augmenting Spark’s classpath. Scala and Java users can include Spark in their projects using its Maven coordinates and Python users can install Spark from PyPI
+If you’d like to build Spark from source, visit Building Spark
+1
+2
+3
+4
+5
+6
+7
