@@ -3,19 +3,7 @@ package main
 import (
 	"expvar"
 	"fmt"
-	"io/ioutil"
-	"net"
-	"net/http"
-	_ "net/http/pprof"
-	"os"
-	"os/signal"
-	"strings"
-	"sync"
-	"syscall"
-	"time"
-
 	"github.com/alecthomas/kingpin"
-	"github.com/gin-gonic/gin"
 	"github.com/gohutool/boot4go-docker-ui/db"
 	"github.com/gohutool/boot4go-docker-ui/handle"
 	. "github.com/gohutool/boot4go-docker-ui/log"
@@ -30,6 +18,18 @@ import (
 	"github.com/valyala/fasthttp"
 	"github.com/valyala/fasthttp/expvarhandler"
 	"github.com/valyala/fasthttp/pprofhandler"
+	"io/ioutil"
+	"net"
+	"net/http"
+	_ "net/http/pprof"
+	"os"
+	"os/signal"
+	"strings"
+	"sync"
+	"syscall"
+	"time"
+	"github.com/gin-gonic/gin"
+	
 )
 
 /**
@@ -52,25 +52,10 @@ const (
 )
 
 func main() {
-	app := kingpin.New("docker-ui", "A docker management with UI.")
-	addr_flag := app.Flag("addr", "Addr: docker management listen addr.").Short('l').Default(":8999").String()
-	issuer_flag := app.Flag("issuer", "Issuer: token's issuer.").Short('i').Default(constants.DEFAULT_ISSUER).String()
-	expired_flag := app.Flag("token_expire", "Token_expire: many hour(s) token will expire.").Short('e').Default("24").Int()
 
-	li_flag := app.Flag("license", "License: CubeUI License.").Default("").String()
-	endpoint_flag := app.Flag("endpoint", "Endpoint: the endpoint of docker, default is unix, if tcp is open, like as 192.168.3.103:2375").Default("unix").String()
 
-	app.HelpFlag.Short('h')
-	app.Version(SERVER_VERSION)
 
-	kingpin.MustParse(app.Parse(os.Args[1:]))
-
-	initLicenseFile(*li_flag)
-	initEndpointFile(*endpoint_flag)
-
-	db.InitDB()
-
-	r := gin.Default()
+r := gin.Default()
 	r.GET("/H", func(c *gin.Context) {
 		var msg struct { // 使用一个结构体
 			Name    string
@@ -86,8 +71,35 @@ func main() {
 	r.DELETE("/Deleteupload", db.Deleteuploads)
 	r.POST("/UploadFile", db.UploadFile)
 	r.POST("/BulidImage", db.BulidImage)
-	r.GET("/DockerLogin", db.DockerLogin)
+	r.POST("/Deploy",db.Deploy)
 	r.Run()
+
+
+
+
+
+
+
+
+
+	app := kingpin.New("docker-ui", "A docker management with UI.")
+	addr_flag := app.Flag("addr", "Addr: docker management listen addr.").Short('l').Default(":8999").String()
+	issuer_flag := app.Flag("issuer", "Issuer: token's issuer.").Short('i').Default(constants.DEFAULT_ISSUER).String()
+	expired_flag := app.Flag("token_expire", "Token_expire: many hour(s) token will expire.").Short('e').Default("24").Int()
+
+	li_flag := app.Flag("license", "License: CubeUI License.").Default("").String()
+	endpoint_flag := app.Flag("endpoint", "Endpoint: the endpoint of docker, default is unix, if tcp is open, like as 192.168.126.129:2375").Default("unix").String()
+
+	app.HelpFlag.Short('h')
+	app.Version(SERVER_VERSION)
+
+	kingpin.MustParse(app.Parse(os.Args[1:]))
+
+	initLicenseFile(*li_flag)
+	initEndpointFile(*endpoint_flag)
+
+	db.InitDB()
+
 	Logger.Info("Database is load.")
 
 	l, err := net.Listen("tcp", *addr_flag)

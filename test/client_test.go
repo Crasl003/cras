@@ -24,7 +24,7 @@ import (
 
 func TestWSClient(t *testing.T) {
 	var addr = "localhost:8999"
-	//var addr = "192.168.56.102:2375"
+	//var addr = "192.168.126.129:2375"
 
 	interrupt := make(chan os.Signal, 1)
 	signal.Notify(interrupt, os.Interrupt)

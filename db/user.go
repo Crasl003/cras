@@ -2,6 +2,7 @@ package db
 
 import (
 	"bytes"
+	"fmt"
 	"net/http"
 	"os"
 	"os/exec"
@@ -36,7 +37,7 @@ const (
 	SELECT_ALL_REPOS   = `select * from t_repos where 1=1 `
 	UPDATE_REPOS_BY_ID = `update t_repos set password=?, username=?, endpoint=?, name=?, description=? where reposid=?`
 
-	INSERT_UPLOADS     = `insert into t_uploads (Algorithm_Name,Downloads,Algorithm_Version,createtime,Author_Name,Introduction,Function,Space) values(?,?,?,?,?,?,?,?)`
+	INSERT_UPLOADS     = `insert into t_uploads (Algorithm_Name,Downloads,Algorithm_Version,createtime) values(?,?,?,?)`
 	DELECT_UPLOADS     = `delete from t_uploads where id=?`
 	SELECT_ALL_UPLOADS = `select * from t_uploads where 1=1`
 )
@@ -102,18 +103,13 @@ type Upload struct {
 	Algorithm_Name    string `form:"Algorithm_Name"`
 	Downloads         string `form:"Downloads"`
 	Algorithm_Version string `form:"Algorithm_Version"`
-	Space             string `form:"Space"`
-	Author_Name       string `form:"Author_Name"`
-	Function          string `form:"Function"`
-	Introduction      string `form:"Introduction"`
 }
 
 func Createupload(c *gin.Context) {
 	upload := Upload{}
 	c.Bind(&upload)
 	createtime := time.Now()
-	_, _, err := dbPlus.Exec(INSERT_UPLOADS, upload.Algorithm_Name, upload.Downloads,
-		upload.Algorithm_Version, createtime, upload.Author_Name, upload.Introduction, upload.Function, upload.Space)
+	_, _, err := dbPlus.Exec(INSERT_UPLOADS, upload.Algorithm_Name, upload.Downloads, upload.Algorithm_Version, createtime)
 	if err == nil {
 		c.JSON(http.StatusOK, gin.H{
 			"ret":        0,
@@ -121,6 +117,7 @@ func Createupload(c *gin.Context) {
 			"createtime": createtime,
 		})
 	} else {
+		fmt.Fprintln(os.Stderr, err)
 		c.JSON(http.StatusOK, gin.H{
 			"ret":  1,
 			"data": "",
@@ -166,14 +163,10 @@ func UploadFile(c *gin.Context) {
 }
 func BulidImage(c *gin.Context) {
 	form, err := c.MultipartForm()
-	//选择哪个仓库地址
-	repositoryId := c.PostForm("repositoryId")
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	//由操作系统/语言环境去选择基础镜像 默认tag latest
-	basicImageName := c.PostForm("basicImageName")
 	files := form.File["files"]
 	system_Name := c.PostForm("system_Name")
 	system_Version := c.PostForm("system_Version")
@@ -188,11 +181,6 @@ func BulidImage(c *gin.Context) {
 			})
 		}
 	}
-	currentdir, err := os.Getwd()
-	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to get currentdir"})
-		return
-	}
 	dockerfile := "File/Dockerfile"
 	f, err := os.Create(dockerfile)
 	if err != nil {
@@ -200,7 +188,7 @@ func BulidImage(c *gin.Context) {
 		return
 	}
 	defer f.Close()
-	_, err = f.WriteString("FROM " + basicImageName + "\n")
+	_, err = f.WriteString("FROM " + system_Name + ":" + system_Version + "\n")
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to write to Dockerfile"})
 		return
@@ -230,169 +218,80 @@ func BulidImage(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to change directory"})
 		return
 	}
-	// "-t" , system_Name, ":", system_Version, " ",
-	//cmd := exec.Command("docker", "build", ".") // 构建镜像
-	ImageNameTag := c.PostForm("ImageNameTag")
-	cmd := exec.Command("docker", "build", "-t", ImageNameTag, ".") // 构建镜像
+	cmd := exec.Command("docker", "build", "-t ", system_Name, ":", system_Version, ".") // 构建镜像
+
 	var stderr bytes.Buffer
 	cmd.Stderr = &stderr
 	err = cmd.Run()
-	err1 := os.Chdir(currentdir)
-	if err1 != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to change directory"})
-		return
-	}
-
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"msg": stderr.String(),
 		})
 		return
 	}
-	os.Chdir("..") //回到有docker环境的目录
-	if repositoryId == "default" {
-		cmd = exec.Command("docker", "login") //登陆一次在json里自动保存账户密码
-		err = cmd.Run()
-		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"loginerror": err,
-			})
-			return
-		}
-		//自定义仓库名
-		Repositorybase := "crasl/"
-		PushImageName := Repositorybase + system_Name + ":" + system_Version
-		//打包镜像
-		Tagcmd := exec.Command("docker", "tag", ImageNameTag, PushImageName)
-		err1 = Tagcmd.Run()
-		if err1 != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"Tagerror": err,
-			})
-			return
-		}
-		//Push
-		Pushcmd := exec.Command("docker", "push", PushImageName)
-		err2 := Pushcmd.Run()
-		if err2 != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"Pusherror": err,
-			})
-			return
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"ret":  0,
-				"data": "OK",
-			})
-		}
-	} else if repositoryId == "registry.cn-hangzhou.aliyuncs.com" {
-		loginCmd := exec.Command("docker", "login", "-u", "aicrazy", "-p", "Zufe1234!", "registry.cn-hangzhou.aliyuncs.com")
-		err := loginCmd.Run()
-		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"error": err,
-			})
-			return
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": "Login Success!",
-			})
-		}
-		Repositorybase := "registry.cn-hangzhou.aliyuncs.com/zufe_123/docker_image:"
-		PushImageName := Repositorybase + "dockerimage"
-		Tagcmd := exec.Command("docker", "tag", ImageNameTag, PushImageName)
-		err1 = Tagcmd.Run()
-		if err1 != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"error": err,
-			})
-			return
-		}
-		Pushcmd := exec.Command("docker", "push", PushImageName)
-		err2 := Pushcmd.Run()
-		if err2 != nil {
-			c.JSON(http.StatusBadRequest, gin.H{
-				"error": err,
-			})
-			return
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"msg": "Push Success!",
-			})
-		}
+
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"error": err,
+			"data":  "docker" + "build" + "-t " + system_Name + ":" + system_Version + " .",
+			"path":  "/" + filepath.Dir(dockerfile) + "/",
+		})
+		return
+	} else {
+		c.JSON(http.StatusOK, gin.H{"message": "Image build successfully!"})
 	}
 }
-func Dockerpush(c *gin.Context) {
-	os.Chdir("..")                         //回到有docker环境的目录
-	cmd := exec.Command("docker", "login") //登陆一次在json里自动保存账户密码
+
+// 定义一个函数，接受一个docker镜像名称和一个安装路径作为参数，返回一个错误值
+func pullAndDeploy(image string, path string) error {
+	// 使用exec.Command函数创建一个命令对象，指定要执行的命令和参数
+	cmd := exec.Command("docker", "pull", image)
+	// 将命令的标准输出和标准错误连接到当前进程的标准输出和标准错误
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	// 执行命令，并等待命令完成
 	err := cmd.Run()
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "Login Success!",
-		})
+		// 如果命令执行出错，返回错误值
+		return err
 	}
-	//自定义仓库名
-	Repositorybase := "crasl/"
-	ImageNameTag := "mysql" + ":" + "latest"
-	PushImageName := Repositorybase + "Algorithm_Name" + ":" + "1.01"
-	//打包镜像
-	Tagcmd := exec.Command("docker", "tag", ImageNameTag, PushImageName)
-	err1 := Tagcmd.Run()
-	if err1 != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "Tag Success!",
-		})
-	}
-	//Push
-	Pushcmd := exec.Command("docker", "push", PushImageName)
-	err2 := Pushcmd.Run()
-	if err2 != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "Push Success!",
-		})
-	}
-}
-func DockerLogin(c *gin.Context) {
-	loginCmd := exec.Command("docker", "login", "-u", "aicrazy", "-p", "Zufe1234!", "registry.cn-hangzhou.aliyuncs.com")
-	loginCmd.Stdin = os.Stdin
-	loginCmd.Stdout = os.Stdout
-	loginCmd.Stderr = os.Stderr
-	err := loginCmd.Run()
+	// 如果命令执行成功，创建一个新的命令对象，指定要执行的命令和参数
+	// 添加-v参数，使用安装路径作为挂载卷的一部分
+	cmd = exec.Command("docker", "run", "-d", "-v", path+":/app", image)
+	// 将命令的标准输出和标准错误连接到当前进程的标准输出和标准错误
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	// 执行命令，并等待命令完成
+	err = cmd.Run()
 	if err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
-		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "Login Success!",
-		})
+		// 如果命令执行出错，返回错误值
+		return err
 	}
-	Pushcmd := exec.Command("docker", "push", "registry.cn-hangzhou.aliyuncs.com/zufe_123/docker_image:mysql")
-	err2 := Pushcmd.Run()
-	if err2 != nil {
-		c.JSON(http.StatusBadRequest, gin.H{
-			"error": err,
-		})
+	// 如果命令执行成功，返回nil
+	return nil
+}
+
+func Deploy(c *gin.Context) {
+	// form, err := c.MultipartForm()
+	// if err != nil {
+	// 	c.String(http.StatusBadRequest, "get form err: %s", err.Error())
+	// 	return
+	// }
+
+	// image := "crasl/image1:1.34"
+	image := c.PostForm("imageName")
+	// 从请求中获取安装路径
+	path := c.PostForm("installPath")
+	// 调用pullAndDeploy函数，传入docker镜像名称和安装路径
+	err := pullAndDeploy(image, path)
+	if err != nil {
+		// 如果函数返回错误值，打印错误信息并退出程序
+		fmt.Println("Error:", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed."})
 		return
-	} else {
-		c.JSON(http.StatusOK, gin.H{
-			"msg": "Push Success!",
-		})
 	}
+	// 如果函数返回nil，打印成功信息
+
+	c.JSON(http.StatusOK, gin.H{"message": "Successfully pulled and deployed" + image + " to " + path})
+
 }

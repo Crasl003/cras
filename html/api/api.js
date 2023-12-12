@@ -365,7 +365,7 @@ $.docker.request = {
     },
     buildTokenHeader: function (serverInfo) {
         // let local_node = {
-        //     node_host:"192.168.56.102",
+        //     node_host:"192.168.126.129",
         //     node_port:"2375",
         //     node_version:"v1.40",
         // }
@@ -4202,7 +4202,7 @@ $.docker.utils = {
             }
         }
 
-        //192.168.56.102:5000/nginx:test
+        //192.168.126.129:5000/nginx:test
 
         nv.Repository = nv.Repository.htmlEncodeBracket();
 
