@@ -3,7 +3,19 @@ package main
 import (
 	"expvar"
 	"fmt"
+	"io/ioutil"
+	"net"
+	"net/http"
+	_ "net/http/pprof"
+	"os"
+	"os/signal"
+	"strings"
+	"sync"
+	"syscall"
+	"time"
+
 	"github.com/alecthomas/kingpin"
+	"github.com/gin-gonic/gin"
 	"github.com/gohutool/boot4go-docker-ui/db"
 	"github.com/gohutool/boot4go-docker-ui/handle"
 	. "github.com/gohutool/boot4go-docker-ui/log"
@@ -18,18 +30,6 @@ import (
 	"github.com/valyala/fasthttp"
 	"github.com/valyala/fasthttp/expvarhandler"
 	"github.com/valyala/fasthttp/pprofhandler"
-	"io/ioutil"
-	"net"
-	"net/http"
-	_ "net/http/pprof"
-	"os"
-	"os/signal"
-	"strings"
-	"sync"
-	"syscall"
-	"time"
-	"github.com/gin-gonic/gin"
-	
 )
 
 /**
@@ -53,9 +53,7 @@ const (
 
 func main() {
 
-
-
-r := gin.Default()
+	r := gin.Default()
 	r.GET("/H", func(c *gin.Context) {
 		var msg struct { // 使用一个结构体
 			Name    string
@@ -67,20 +65,16 @@ r := gin.Default()
 		msg.Number = 123
 		c.JSON(http.StatusOK, msg)
 	})
+
 	r.POST("/Createupload", db.Createupload)
 	r.DELETE("/Deleteupload", db.Deleteuploads)
 	r.POST("/UploadFile", db.UploadFile)
 	r.POST("/BulidImage", db.BulidImage)
-	r.POST("/Deploy",db.Deploy)
+	r.POST("/Deploy", db.Deploy)
+
+	r.GET("/AllDatabaseAlgorithms", db.AllDatabaseAlgorithms)
+	r.POST("/GetAlgorithmDetails", db.GetAlgorithmDetails)
 	r.Run()
-
-
-
-
-
-
-
-
 
 	app := kingpin.New("docker-ui", "A docker management with UI.")
 	addr_flag := app.Flag("addr", "Addr: docker management listen addr.").Short('l').Default(":8999").String()

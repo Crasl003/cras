@@ -2,6 +2,10 @@ package db
 
 import (
 	"database/sql"
+	"fmt"
+	"log"
+
+	"github.com/gin-gonic/gin"
 	"github.com/gohutool/boot4go-util/db"
 	_ "github.com/mattn/go-sqlite3"
 )
@@ -67,6 +71,11 @@ CREATE TABLE if not exists "t_orchestrator" (
 );
 `
 
+type Algorithm struct {
+	Name        string
+	Description string
+}
+
 func InitDB() {
 
 	_, err := dbPlus.GetDB().Exec(sql_table)
@@ -75,4 +84,53 @@ func InitDB() {
 	}
 
 	InitAdminUser()
+}
+
+func AllDatabaseAlgorithms(c *gin.Context) {
+	// 连接数据库
+	db, err := sql.Open("sqlite3", "./data.db")
+	if err != nil {
+		panic(err.Error())
+	}
+	defer db.Close()
+
+	// 执行全部算法数据
+	rows, err := db.Query("SELECT algorithm FROM algorithms")
+	if err != nil {
+		panic(err.Error())
+	}
+	defer rows.Close()
+
+	// 遍历查询结果
+	for rows.Next() {
+		var algorithm string
+		err = rows.Scan(&algorithm)
+		if err != nil {
+			panic(err.Error())
+		}
+		fmt.Println("Running algorithm:", algorithm)
+		// 在此处执行具体的算法操作
+	}
+
+	fmt.Println("所有数据库算法数据已运行完毕")
+}
+
+func GetAlgorithmDetails(c *gin.Context) {
+	id := c.PostForm("id")
+
+	db, err := sql.Open("sqlite3", "./data.db")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	row := db.QueryRow("SELECT name, details FROM algorithms WHERE id = ?", id)
+	var name, details string
+	err = row.Scan(&name, &details)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("Algorithm Name: %s\n", name)
+	fmt.Printf("Algorithm Details: %s\n", details)
 }
